@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bmdx50vpbn1up"]
+
+[ext_resource type="Texture2D" uid="uid://yc7xdja8c8td" path="res://icon.svg" id="1_f7cmv"]
+[ext_resource type="Script" uid="uid://cmryxtpxsvd5f" path="res://sprite_2d.gd" id="2_mehiu"]
+[ext_resource type="Script" uid="uid://dsl7d20t3fmp3" path="res://label.gd" id="3_lt4yx"]
+
+[node name="Node2D" type="Node2D" unique_id=2125215657]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=615295527]
+position = Vector2(569, 331)
+texture = ExtResource("1_f7cmv")
+script = ExtResource("2_mehiu")
+
+[node name="Powieksz" type="Button" parent="." unique_id=1773922760]
+offset_left = 45.0
+offset_top = 29.0
+offset_right = 150.0
+offset_bottom = 60.0
+text = "Powiększ się"
+
+[node name="Zmniejsz" type="Button" parent="." unique_id=443962662]
+offset_left = 45.0
+offset_top = 78.0
+offset_right = 151.0
+offset_bottom = 109.0
+text = "Zmniejsz się"
+
+[node name="Kolor" type="Button" parent="." unique_id=584981318]
+offset_left = 888.0
+offset_top = 42.0
+offset_right = 1070.0
+offset_bottom = 73.0
+text = "Zmień na losowy kolor"
+
+[node name="Label" type="Label" parent="." unique_id=1659774759]
+offset_left = 398.0
+offset_top = 46.0
+offset_right = 587.0
+offset_bottom = 69.0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_lt4yx")
+
+[node name="Wroc" type="Button" parent="." unique_id=2091184219]
+offset_left = 32.0
+offset_top = 593.0
+offset_right = 235.0
+offset_bottom = 624.0
+text = "Wróć na lokację startową"
+
+[connection signal="mniejszy" from="Sprite2D" to="Label" method="_on_sprite_2d_mniejszy"]
+[connection signal="wiekszy" from="Sprite2D" to="Label" method="_on_sprite_2d_wiekszy"]
+[connection signal="pressed" from="Powieksz" to="Sprite2D" method="_on_powieksz_pressed"]
+[connection signal="pressed" from="Zmniejsz" to="Sprite2D" method="_on_zmniejsz_pressed"]
+[connection signal="pressed" from="Kolor" to="Sprite2D" method="_on_kolor_pressed"]
+[connection signal="pressed" from="Wroc" to="Sprite2D" method="_on_wroc_pressed"]
